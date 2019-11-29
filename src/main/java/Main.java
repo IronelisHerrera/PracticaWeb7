@@ -25,8 +25,6 @@ public class Main {
 
     public static void main(String[] args) throws UnirestException {
 
-
-
             port(8081);
 
             HttpResponse<JsonNode> jsonResponse = Unirest.get("http://localhost:4567/rest/estudiantes/")
@@ -63,12 +61,14 @@ public class Main {
             j.put("nombre",nombre);
 
 
+            HttpResponse<JsonNode> jsonResponse2 = Unirest.post("http://localhost:4567/rest/estudiantes/")
+                    .header("accept", "application/json")
+                    .header("Content-Type", "application/json")
+                    .body(j)
+                    .asJson();
 
-
-
-
-
-
+            System.out.println("Se guardo el estudiante: " + jsonResponse2.getBody());
+            System.out.println("\nListado de estudiantes:\n" + jsonResponse.getBody()+"\n");
 
     }
 
