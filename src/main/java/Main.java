@@ -34,10 +34,10 @@ public class Main {
                     .header("Content-Type", "application/json")
                     .asJson();
 
-            System.out.println("Listado de estudiantes:\n" + jsonResponse.getBody()+"\n");
+            System.out.println("Lista de estudiantes consultados:\n" + jsonResponse.getBody()+"\n");
 
 
-            System.out.println("Matricula a consultar: ");
+            System.out.println("Matricula del estudiante a consultar: ");
             Scanner in = new Scanner(System.in);
 
             String s = in.nextLine();
@@ -47,7 +47,7 @@ public class Main {
                     .header("Content-Type", "application/json")
                     .asJson();
 
-            System.out.println("Estudiante:\n" + jsonResponse3.getBody()+"\n");
+            System.out.println("El estudiante consultado es:\n" + jsonResponse3.getBody()+"\n");
 
 
             JSONObject j = new JSONObject();
@@ -62,7 +62,7 @@ public class Main {
             String nombre = in.nextLine();
             j.put("nombre",nombre);
 
-            
+
 
 
 
