@@ -1,24 +1,15 @@
-import com.google.gson.Gson;
+
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import freemarker.template.Configuration;
-import freemarker.template.Version;
-import org.json.JSONObject;
-import spark.ModelAndView;
-import spark.Spark;
-import spark.template.freemarker.FreeMarkerEngine;
 
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.Map;
+import org.json.JSONObject;
 import java.util.Scanner;
 
 import static spark.Spark.port;
 
-import static spark.Spark.staticFileLocation;
-import static spark.route.HttpMethod.get;
+
 
 
 public class Main {
@@ -68,7 +59,7 @@ public class Main {
                     .asJson();
 
             System.out.println("Se guardo el estudiante: " + jsonResponse2.getBody());
-            System.out.println("\nListado de estudiantes:\n" + jsonResponse.getBody()+"\n");
+            //System.out.println("\nListado de estudiantes:\n" + jsonResponse.getBody()+"\n");
 
     }
 
